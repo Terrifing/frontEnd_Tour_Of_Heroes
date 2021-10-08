@@ -9,8 +9,6 @@ import {map} from "rxjs/operators";
 @Injectable({ providedIn: 'root' })
 export class DataService extends ClientDataSourceService<Hero> {
 
-  filterResList = this.filterList;
-
   constructor(
     private heroService: HeroService,
   ) {
@@ -44,7 +42,7 @@ export class DataService extends ClientDataSourceService<Hero> {
           pagination.page_index = 1
 
       if(filters)
-        l = this.filterResList(l, filters)
+        l = this.filterList(l, filters)
 
       return {data: l, totalItems: l.length, orders: orders, filters: filters, pagination: pagination}
     }));
