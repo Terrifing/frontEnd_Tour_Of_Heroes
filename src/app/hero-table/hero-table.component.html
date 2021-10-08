@@ -1,1 +1,12 @@
-<p>hero-table works!</p>
+<mat-card class="mat-card-table-holder">
+  <mat-card-content>
+    <app-table
+      routerLink="{{this.heroDetailId}}"
+      [table]="table"
+      [dataService]="dataService"
+      [(tableState)]="tableState"
+      [tableEventListeners]="tableEventListeners"
+    >
+    </app-table>
+  </mat-card-content>
+</mat-card>
