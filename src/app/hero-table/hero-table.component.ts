@@ -41,7 +41,6 @@ export class HeroTableComponent implements OnInit, OnDestroy {
       pageSize: 7,
       pageSizes: [5,6,7,8,10]
     },
-    export: true,
     gridColumns: [
       {
         key: 'heroId',
@@ -99,10 +98,6 @@ export class HeroTableComponent implements OnInit, OnDestroy {
         operation: FilterOperationEnums.CONTAINS
       },
     ],
-    defaultSort: {
-      column: {key: 'bill_date', header: 'bill_date'},
-      direction: 'asc'
-    }
   };
 
   constructor(
@@ -113,8 +108,6 @@ export class HeroTableComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-
-    this.dataService.listAll(undefined, undefined, undefined);
     this.tableState = this.objectStateService.get('list-of-heroes') || {};
   }
 

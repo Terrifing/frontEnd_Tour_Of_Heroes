@@ -11,10 +11,12 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~12.2.0",
+    "@angular/cdk": "^12.2.9",
     "@angular/common": "~12.2.0",
     "@angular/compiler": "~12.2.0",
     "@angular/core": "~12.2.0",
     "@angular/forms": "~12.2.0",
+    "@angular/material": "^12.2.9",
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
@@ -23,8 +25,13 @@
     "@mosreg-spa/table": "^1.5.138",
     "@mosreg-spa/utils": "^1.1.24",
     "angular-in-memory-web-api": "^0.11.0",
+    "angular2-jsonapi": "^8.2.1",
+    "jmespath": "^0.15.0",
+    "moment": "^2.29.1",
+    "ngx-mat-select-search": "^3.3.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
+    "vanilla-text-mask": "^5.1.1",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
