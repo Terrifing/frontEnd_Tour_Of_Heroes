@@ -15,10 +15,6 @@ export class DataService extends ClientDataSourceService<Hero> {
     super()
   }
 
-  checkPage(pagination: Pagination){
-    return isNaN(<number>pagination?.page_index)
-  }
-
   filterList(data: Hero[], filters: Filters): Hero[]{
     for (const filter in filters) {
       if((filters[filter].field == "heroIdEq")&&(filters[filter].operation == 'equals'))
@@ -38,10 +34,9 @@ export class DataService extends ClientDataSourceService<Hero> {
   listAll(filters: Filters | undefined, orders: Orders | undefined, pagination: Pagination | undefined): Observable<DataSourceListResponse<Hero>> {
     return this.heroService.getHeroes().pipe(map(l => {
 
-      if ((pagination) && (this.checkPage(pagination))){
-        pagination.page_index = 1;
+      if (pagination)
         pagination.page_index = pagination?.page_index ? pagination?.page_index : 1
-      }
+
       if(filters)
         l = this.filterList(l, filters)
 
